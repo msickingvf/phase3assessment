@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+    	<!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/pricing/"> -->
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    	<!-- Custom styles for this template -->
+	    <title>SportyShoesCo</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
+    </head>
+    <body>
+		<div th:replace="adminHeader :: adminHeader"></div>
+		<h4>Product Admin</h4>
+		<a href="/editProduct">Add Product</a><br><br>
+		<table class="table table-striped">
+		  	<thead>
+			    <tr>
+			      <th scope="col">id</th>
+			      <th scope="col">Name</th>
+			      <th scope="col">Category</th>
+			      <th scope="col">Price</th>
+			      <th scope="col">PictureUrl</th>
+			      <th scope="col">Picture</th>
+			      <th scope="col">Action</th>
+			    </tr>
+  			</thead>
+  			<tbody>
+				<tr th:each="product : ${products}"  th:id="${product.id}">
+					<td th:text="${product.id}" th:id="productId">id</td>
+					<td th:text="${product.name}" th:id="productName">name</td>
+					<td th:text="${product.category.name}" th:id="productCategory">category</td>
+					<td th:text="${product.price}" th:id="productPrice">price</td>
+					<td th:text="${product.pictureUrl}" th:id="productPictureUrl">PictureUrl</td>
+					<td><img th:src="${product.pictureUrl}" height="50"/></td>
+					<td><a th:href="@{/editProduct(id=${product.id})}">edit</a></td>
+				</tr>
+			</tbody>
+		</table>
+    </body>
+</html>

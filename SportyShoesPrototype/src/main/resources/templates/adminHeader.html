@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!-- <div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header"> -->
+<div th:fragment="adminHeader">
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <img src="pictures/headerShoe.jpg" width="70">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Sporty Shoes Company</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/adminPassword">AdminPassword</a>
+        <a class="p-2 text-dark" href="/productAdmin">Product Admin</a>
+        <a class="p-2 text-dark" href="/showUsers">UserQuery</a>
+        <a class="p-2 text-dark" href="/purchaseReportsOverview">PurchaseReports</a>
+      </nav>
+      <a class="btn btn-outline-primary" href="logout">logout</a>
+    </div>
+</div>
